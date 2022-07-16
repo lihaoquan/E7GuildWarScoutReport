@@ -1,0 +1,15 @@
+.new-comment.modal
+  button.close &#10006;
+  h1 New Comment 
+    span.info
+  form(action='/new-comment' method='post')
+    input(type='hidden' name='unit_id')
+    input(type='hidden' name='fort' value=fort)
+    input(type='hidden' name='datetime' value=datetime)
+    .form-group
+      label(for='commenter') Author
+      input(id='commenter' type='text' name='author_id' required)
+    .form-group
+      label(for='comment_body') Comment
+      textarea(id='comment_body' type='text' name='comment' maxlength='250' required)
+    input.button(type='submit' value='Add')

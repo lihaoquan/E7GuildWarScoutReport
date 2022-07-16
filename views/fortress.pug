@@ -1,0 +1,147 @@
+include partials/header.pug
+block header
+    nav
+      a(href='/?date=' + datetime) &larr; Back to Main Page
+    .header.has-nav
+      h1 #{fort_name}
+    .container
+      h2.title Round 1
+      .units
+        .unit
+          .unit-header
+            img(src=round_one[0] ? (unit_images[round_one[0].unit_id] ? './img/characters/' + unit_images[round_one[0].unit_id] : 'https://placehold.it/128x128') : 'https://placehold.it/128x128')
+            h2 #{round_one[0] ? round_one[0].unit_id : 'Unit Name'}
+          .unit-body
+            ul
+              li
+                strong Speed
+                p #{round_one[0] ? round_one[0].unit_speed : '0'}
+              li
+                strong Health
+                p #{round_one[0] ? round_one[0].unit_health : '0'}
+              li
+                strong Artifact/EE
+                p #{round_one[0] ? round_one[0].unit_artifact : 'Artifact Name'}
+              li
+                strong Immunity?
+                p(class=round_one[0] ? (round_one[0].immunity == true ? 'highlight' : false) : false) #{round_one[0] ? (round_one[0].immunity == true ? 'Yes' : 'No') : 'No Info'}
+          .unit-action
+            button.edit-button(data-fort=fort data-slot=1 data-round=1 data-datetime=datetime data-unit=round_one[0] ? round_one[0] : []) Edit
+            button.view-button(data-fort=fort data-slot=1 data-round=1 data-datetime=datetime data-unit=round_one[0] ? round_one[0] : []) View Comments
+            button.add-button(data-fort=fort data-slot=1 data-round=1 data-datetime=datetime data-unit=round_one[0] ? round_one[0] : []) Add Comment
+        .unit
+          .unit-header
+            img(src=round_one[1] ? (unit_images[round_one[1].unit_id] ? './img/characters/' + unit_images[round_one[1].unit_id] : 'https://placehold.it/128x128') : 'https://placehold.it/128x128')
+            h2 #{round_one[1] ? round_one[1].unit_id : 'Unit Name'}
+          .unit-body
+            ul
+              li
+                strong Speed
+                p #{round_one[1] ? round_one[1].unit_speed : '0'}
+              li
+                strong Health
+                p #{round_one[1] ? round_one[1].unit_health : '0'}
+              li
+                strong Artifact/EE
+                p #{round_one[1] ? round_one[1].unit_artifact : 'Artifact Name'}
+              li
+                strong Immunity?
+                p(class=round_one[1] ? (round_one[1].immunity == true ? 'highlight' : false) : false) #{round_one[1] ? (round_one[1].immunity == true ? 'Yes' : 'No') : 'No Info'}
+          .unit-action
+            button.edit-button(data-fort=fort data-slot=2 data-round=1 data-datetime=datetime data-unit=round_one[1] ? round_one[1] : []) Edit
+            button.view-button(data-fort=fort data-slot=2 data-round=1 data-datetime=datetime data-unit=round_one[1] ? round_one[1] : []) View Comments
+            button.add-button(data-fort=fort data-slot=2 data-round=1 data-datetime=datetime data-unit=round_one[1] ? round_one[1] : []) Add Comment
+        .unit
+          .unit-header
+            img(src=round_one[2] ? (unit_images[round_one[2].unit_id] ? './img/characters/' + unit_images[round_one[2].unit_id] : 'https://placehold.it/128x128') : 'https://placehold.it/128x128')
+            h2 #{round_one[2] ? round_one[2].unit_id : 'Unit Name'}
+          .unit-body
+            ul
+              li
+                strong Speed
+                p #{round_one[2] ? round_one[2].unit_speed : '0'}
+              li
+                strong Health
+                p #{round_one[2] ? round_one[2].unit_health : '0'}
+              li
+                strong Artifact/EE
+                p #{round_one[2] ? round_one[2].unit_artifact : 'Artifact Name'}
+              li
+                strong Immunity?
+                p(class=round_one[2] ? (round_one[2].immunity == true ? 'highlight' : false) : false) #{round_one[2] ? (round_one[2].immunity == true ? 'Yes' : 'No') : 'No Info'}
+          .unit-action
+            button.edit-button(data-fort=fort data-slot=3 data-round=1 data-datetime=datetime data-unit=round_one[2] ? round_one[2] : []) Edit
+            button.view-button(data-fort=fort data-slot=3 data-round=1 data-datetime=datetime data-unit=round_one[2] ? round_one[2] : []) View Comments
+            button.add-button(data-fort=fort data-slot=3 data-round=1 data-datetime=datetime data-unit=round_one[2] ? round_one[2] : []) Add Comment
+      h2.title Round 2
+      .units
+        .unit
+          .unit-header
+            img(src=round_two[0] ? (unit_images[round_two[0].unit_id] ? './img/characters/' + unit_images[round_two[0].unit_id] : 'https://placehold.it/128x128') : 'https://placehold.it/128x128')
+            h2 #{round_two[0] ? round_two[0].unit_id : 'Unit Name'}
+          .unit-body
+            ul
+              li
+                strong Speed
+                p #{round_two[0] ? round_two[0].unit_speed : '0'}
+              li
+                strong Health
+                p #{round_two[0] ? round_two[0].unit_health : '0'}
+              li
+                strong Artifact/EE
+                p #{round_two[0] ? round_two[0].unit_artifact : 'Artifact Name'}
+              li
+                strong Immunity?
+                p(class=round_two[0] ? (round_two[0].immunity == true ? 'highlight' : false) : false) #{round_two[0] ? (round_two[0].immunity == true ? 'Yes' : 'No') : 'No Info'}
+          .unit-action
+            button.edit-button(data-fort=fort data-slot=1 data-round=2 data-datetime=datetime data-unit=round_two[0] ? round_two[0] : []) Edit
+            button.view-button(data-fort=fort data-slot=1 data-round=2 data-datetime=datetime data-unit=round_two[0] ? round_two[0] : []) View Comments
+            button.add-button(data-fort=fort data-slot=1 data-round=2 data-datetime=datetime data-unit=round_two[0] ? round_two[0] : []) Add Comment
+        .unit
+          .unit-header
+            img(src=round_two[1] ? (unit_images[round_two[1].unit_id] ? './img/characters/' + unit_images[round_two[1].unit_id] : 'https://placehold.it/128x128') : 'https://placehold.it/128x128')
+            h2 #{round_two[1] ? round_two[1].unit_id : 'Unit Name'}
+          .unit-body
+            ul
+              li
+                strong Speed
+                p #{round_two[1] ? round_two[1].unit_speed : '0'}
+              li
+                strong Health
+                p #{round_two[1] ? round_two[1].unit_health : '0'}
+              li
+                strong Artifact/EE
+                p #{round_two[1] ? round_two[1].unit_artifact : 'Artifact Name'}
+              li
+                strong Immunity?
+                p(class=round_two[1] ? (round_two[1].immunity == true ? 'highlight' : false) : false) #{round_two[1] ? (round_two[1].immunity == true ? 'Yes' : 'No') : 'No Info'}
+          .unit-action
+            button.edit-button(data-fort=fort data-slot=2 data-round=2 data-datetime=datetime data-unit=round_two[1] ? round_two[1] : []) Edit
+            button.view-button(data-fort=fort data-slot=2 data-round=2 data-datetime=datetime data-unit=round_two[1] ? round_two[1] : []) View Comments
+            button.add-button(data-fort=fort data-slot=2 data-round=2 data-datetime=datetime data-unit=round_two[1] ? round_two[1] : []) Add Comment
+        .unit
+          .unit-header
+            img(src=round_two[2] ? (unit_images[round_two[2].unit_id] ? './img/characters/' + unit_images[round_two[2].unit_id] : 'https://placehold.it/128x128') : 'https://placehold.it/128x128')
+            h2 #{round_two[2] ? round_two[2].unit_id : 'Unit Name'}
+          .unit-body
+            ul
+              li
+                strong Speed
+                p #{round_two[2] ? round_two[2].unit_speed : '0'}
+              li
+                strong Health
+                p #{round_two[2] ? round_two[2].unit_health : '0'}
+              li
+                strong Artifact/EE
+                p #{round_two[2] ? round_two[2].unit_artifact : 'Artifact Name'}
+              li
+                strong Immunity?
+                p(class=round_two[2] ? (round_two[2].immunity == true ? 'highlight' : false) : false) #{round_two[2] ? (round_two[2].immunity == true ? 'Yes' : 'No') : 'No Info'}
+          .unit-action
+            button.edit-button(data-fort=fort data-slot=3 data-round=2 data-datetime=datetime data-unit=round_two[2] ? round_two[2] : []) Edit
+            button.view-button(data-fort=fort data-slot=3 data-round=2 data-datetime=datetime data-unit=round_two[2] ? round_two[2] : []) View Comments
+            button.add-button(data-fort=fort data-slot=3 data-round=2 data-datetime=datetime data-unit=round_two[2] ? round_two[2] : []) Add Comment
+include partials/edit-modal.pug
+include partials/view-comments-modal.pug
+include partials/new-comment-modal.pug
+include partials/footer.pug

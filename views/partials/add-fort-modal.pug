@@ -1,0 +1,9 @@
+.fort.modal
+  button.close &#10006;
+  h1 Add Small Fort
+  form(action='/new-fort' method='post')
+    input(type='hidden' name='date' value=today_date)
+    .form-group
+      label(for='fort_name') Fort Name
+      input(id='fort_name' type='text' name='fort_name' required)
+    input.button(type='submit' value='Create')

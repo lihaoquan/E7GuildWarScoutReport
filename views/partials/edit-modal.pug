@@ -1,0 +1,32 @@
+.edit.modal
+  button.close &#10006;
+  h1#modal-title
+  form(action='/update-unit' method='post')
+    input(type='hidden' name='unit_slot')
+    input(type='hidden' name='unit_round')
+    input(type='hidden' name='datetime' id='datetime')
+    input(type='hidden' name='fort' id='fort')
+    .form-group
+      label(for='unit') Unit
+      select(id='unit' name='unit_id' required)
+        each unit in units
+          option(value=unit) #{unit}
+    .form-group
+      label(for='speed') Speed
+      input(id='speed' name='unit_speed' type='number' min='0' value='200' required)
+    .form-group
+      label(for='health') Health
+      input(id='health' name='unit_health' type='number' min='0' value='10000' required)
+    .form-group
+      label(for='artifact') Artifact
+      input(id='artifact' type='text' name='artifact_id' required)
+    .form-group
+      label.main-title Immunity
+      label(for='immunity-yes') Yes
+      input(id='immunity-yes' name='unit_immunity' type='radio' value='1')
+      label(for='immunity-no') No
+      input(id='immunity-no' name='unit_immunity' type='radio' value='0' checked)
+    .form-group
+      label(for='updater') Updater
+      input(id='updater' type='text' name='updater_id' required)
+    input.button(type='submit' value='Save')

@@ -1,0 +1,101 @@
+include partials/header.pug
+block header
+    .header
+      h1 Guild War Scout Report
+    div.select-div
+      select(onchange='location = this.value;').main-select
+        if (dates.length == 0)
+          option(value='/') -- No Reports Yet --
+        else
+          each date in dates
+            option(value='?date=' + date selected=date==today_date) #{date + ' - ' + date_tags[date]}
+      .button-dual
+        button.add-fort Add Fort
+        button.update-guild-name Update Guild Name
+        button.create-new Create New Report
+    .container.towers
+      a(href='/fortress?fort=1&date=' + today_date).item
+        .item-top
+          img(src='img/tower.png')
+          h3 Top Fort
+        .item-bottom
+          .stats
+            .stat
+              .stat-header
+                h4 Last Updated
+              .stat-body
+                p #{fort_info_obj['1'] ? fort_info_obj['1'].update_time : '-'}
+            .stat
+              .stat-header
+                h4 Updated By
+              .stat-body
+                p #{fort_info_obj['1'] ? fort_info_obj['1'].updater : '-'}
+      a(href='/fortress?fort=2&date=' + today_date).item
+        .item-top
+          img(src='img/tower.png')
+          h3 Mid Fort
+        .item-bottom
+          .stats
+            .stat
+              .stat-header
+                h4 Last Updated
+              .stat-body
+                p #{fort_info_obj['2'] ? fort_info_obj['2'].update_time : '-'}
+            .stat
+              .stat-header
+                h4 Updated By
+              .stat-body
+                p #{fort_info_obj['2'] ? fort_info_obj['2'].updater : '-'}
+      a(href='/fortress?fort=3&date=' + today_date).item
+        .item-top
+          img(src='img/tower.png')
+          h3 Bottom Fort
+        .item-bottom
+          .stats
+            .stat
+              .stat-header
+                h4 Last Updated
+              .stat-body
+                p #{fort_info_obj['3'] ? fort_info_obj['3'].update_time : '-'}
+            .stat
+              .stat-header
+                h4 Updated By
+              .stat-body
+                p #{fort_info_obj['3'] ? fort_info_obj['3'].updater : '-'}
+      a(href='/fortress?fort=4&date=' + today_date).item
+        .item-top
+          img(src='img/tower-stronghold.png')
+          h3 Stronghold
+        .item-bottom
+          .stats
+            .stat
+              .stat-header
+                h4 Last Updated
+              .stat-body
+                p #{fort_info_obj['4'] ? fort_info_obj['4'].update_time : '-'}
+            .stat
+              .stat-header
+                h4 Updated By
+              .stat-body
+                p #{fort_info_obj['4'] ? fort_info_obj['4'].updater : '-'}
+      each fort, index in small_forts
+        a(href='/fortress?fort=' + fort.fortress_info_id + '&date=' + today_date).item
+          .item-top
+            img(src='img/small-tower.png')
+            h3 #{fort.tag}
+          .item-bottom
+            .stats
+              .stat
+                .stat-header
+                  h4 Last Updated
+                .stat-body
+                  p #{fort_info_obj[fort.fortress_info_id] ? fort_info_obj[fort.fortress_info_id].update_time : '-'}
+              .stat
+                .stat-header
+                  h4 Updated By
+                .stat-body
+                  p #{fort_info_obj[fort.fortress_info_id] ? fort_info_obj[fort.fortress_info_id].updater : '-'}
+include partials/new-modal.pug
+include partials/add-fort-modal.pug
+include partials/update-guild-name-modal.pug
+include partials/footer.pug
